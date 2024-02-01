@@ -8,6 +8,23 @@
 - 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
 - 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
 
+## Important Links
+
+
+
+[![YouTube Overview](https://img.youtube.com/vi/CtEtfCy3Lsk/0.jpg)](https://www.youtube.com/watch?v=CtEtfCy3Lsk)
+
+Live Demo: https://metis-demo-bice.vercel.app/
+
+Metis: https://www.metis.io/
+
+Scaffold-ETH 2: https://scaffoldeth.io/
+
+Nodies RPC: https://www.nodies.app/
+
+POKT: https://www.pokt.network/
+
+
 ## Contents
 
 - [Requirements](#requirements)
