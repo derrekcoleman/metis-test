@@ -46,6 +46,36 @@ const config: HardhatUserConfig = {
         enabled: process.env.MAINNET_FORKING_ENABLED === "true",
       },
     },
+    "metis-goerli": {
+      url: "https://goerli.gateway.metisdevops.link",
+      accounts: [deployerPrivateKey],
+      verify: {
+        etherscan: {
+          apiKey: "apiKey is not required, just set a placeholder",
+          apiUrl: "https://goerli.explorer.metisdevops.link",
+        },
+      },
+    },
+    "metis-sepolia": {
+      url: "https://sepolia.rpc.metisdevops.link",
+      accounts: [deployerPrivateKey],
+      verify: {
+        etherscan: {
+          apiKey: "apiKey is not required, just set a placeholder",
+          apiUrl: "https://sepolia.explorer.metisdevops.link",
+        },
+      },
+    },
+    andromeda: {
+      url: "https://lb.nodies.app/v1/f5c5ecde09414b3384842a8740a8c998",
+      accounts: [deployerPrivateKey],
+      verify: {
+        etherscan: {
+          apiKey: "apiKey is not required, just set a placeholder",
+          apiUrl: "https://api.routescan.io/v2/network/mainnet/evm/1088/etherscan",
+        },
+      },
+    },
     mainnet: {
       url: `https://eth-mainnet.alchemyapi.io/v2/${providerApiKey}`,
       accounts: [deployerPrivateKey],
@@ -126,6 +156,32 @@ const config: HardhatUserConfig = {
   // configuration for harhdat-verify plugin
   etherscan: {
     apiKey: `${etherscanApiKey}`,
+    customChains: [
+      {
+        network: "andromeda",
+        chainId: 1088,
+        urls: {
+          apiURL: "https://api.routescan.io/v2/network/mainnet/evm/1088/etherscan",
+          browserURL: "https://explorer.metis.io",
+        },
+      },
+      {
+        network: "metis-goerli",
+        chainId: 599,
+        urls: {
+          apiURL: "https://goerli.explorer.metisdevops.link/api",
+          browserURL: "https://goerli.explorer.metisdevops.link",
+        },
+      },
+      {
+        network: "metis-sepolia",
+        chainId: 59901,
+        urls: {
+          apiURL: "https://sepolia.explorer.metisdevops.link/api",
+          browserURL: "https://sepolia.explorer.metisdevops.link",
+        },
+      },
+    ],
   },
   // configuration for etherscan-verify from hardhat-deploy plugin
   verify: {
